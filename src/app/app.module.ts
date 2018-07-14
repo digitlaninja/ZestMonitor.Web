@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { GovernanceComponent } from './governance/governance.component';
 import { ProposalsComponent } from './proposals/proposals.component';
+import { ProposalComponent } from './proposal/proposal.component';
+import { BudgetProposalsDetailsComponent } from './budget-proposals-details/budget-proposals-details.component';
 
 const appRoutes: Routes = [
   { path: 'governance', component: GovernanceComponent },
@@ -20,11 +22,13 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     GovernanceComponent,
-    ProposalsComponent
+    ProposalsComponent,
+    ProposalComponent,
+    BudgetProposalsDetailsComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot()],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [],
+  // providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
