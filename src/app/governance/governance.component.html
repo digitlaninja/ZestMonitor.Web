@@ -62,7 +62,6 @@
           <span class="pull-left">Funded amount:</span>
           <span class="pull-right label label-success" id="globalestablishedbudgetamount">???</span>
           <br>
-          <!-- <a class="pull-left btn btn-success btn-sm waves-light" mdbWavesEffect>Go somewhere</a> -->
         </div>
         <div class="card-footer text-muted primary-color white-text">
           <p class="mb-0">2 days ago</p>
@@ -113,17 +112,23 @@
           Budget proposals info
         </div>
         <div class="card-body">
-          <!-- <h4 class="card-title">Special title treatment</h4> -->
           <p>A governance proposal is
             <strong>valid</strong> if the fee was payed and it was submitted to peers successfully.</p>
           <p class="mb-0">A governance proposal is
             <strong>funded</strong> (will get paid on next super-block if enough funding available in next super-block.</p>
         </div>
-        <button type="button" class="btn btn-mdb-color waves-light" mdbWavesEffect> Read more about our governance and budget system</button>
+
+        <button type="button" class="btn btn-primary waves-light" mdbWavesEffect>
+          Read more about our governance and budget system
+          <mdb-icon class="pl-1" icon="arrow-right"></mdb-icon>
+        </button>
+
       </div>
     </div>
+
   </div>
 
-  <app-proposal></app-proposal>
 
   <app-budget-proposals-details></app-budget-proposals-details>
+
+</div>

@@ -1,0 +1,17 @@
+body
+  > app-root
+  > app-proposal
+  > div
+  > div:nth-child(3)
+  > div
+  > div
+  > div.card-header.indigo
+  > mdb-navbar
+  > nav {
+  box-shadow: none !important   ;
+}
+
+.nav-item {
+  width: 10rem;
+  border-right: 1px #849bce solid;
+}

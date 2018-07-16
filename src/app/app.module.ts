@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { GovernanceComponent } from './governance/governance.component';
-import { ProposalsComponent } from './proposals/proposals.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { BudgetProposalsDetailsComponent } from './budget-proposals-details/budget-proposals-details.component';
+import { ProposalPaymentsComponent } from './proposal-payments/proposal-payments.component';
 
 const appRoutes: Routes = [
   { path: 'governance', component: GovernanceComponent },
-  { path: 'proposals', component: ProposalsComponent }
+  { path: 'proposal', component: ProposalComponent }
 ];
 
 @NgModule({
@@ -22,9 +22,10 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     GovernanceComponent,
-    ProposalsComponent,
     ProposalComponent,
-    BudgetProposalsDetailsComponent
+    ProposalComponent,
+    BudgetProposalsDetailsComponent,
+    ProposalPaymentsComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot()],
   schemas: [NO_ERRORS_SCHEMA],

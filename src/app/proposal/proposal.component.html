@@ -1,0 +1,301 @@
+<div class="container container-padding pl-0">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">
+        <mdb-icon icon="tag" aria-hidden="true"></mdb-icon>
+        <span id="budgetid">___</span> proposal</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-primary">
+        <div class="card-header primary-color white-text">
+          Proposal details
+        </div>
+        <div class="card-body">
+          <table class="proposal-details-table table table-bordered table-sm table-hover">
+            <tbody>
+              <tr>
+                <td>
+                  <mdb-icon class="pr-1" icon="link"></mdb-icon>
+                  Proposal URL
+                </td>
+
+                <td id="budgeturl">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pr-1" icon="heartbeat"></mdb-icon>
+                  Budget Status
+                </td>
+
+                <td id="budgetstatus">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pr-1" icon="sign-in"></mdb-icon>
+                  Proposal Hash
+                </td>
+                <td id="budgethash">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pr-1" icon="sign-out"></mdb-icon>
+                  Proposal Fee Transaction
+                </td>
+                <td id="budgetfee">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pr-1" icon="clock-o"></mdb-icon>
+                  Last Seen
+                </td>
+                <td id="budgetlastseen">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pr-1" icon="play-circle-o"></mdb-icon>
+                  First Seen
+                </td>
+                <td id="budgetfirstseen">???</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6">
+      <div class="card card-primary">
+        <div class="card-header primary-color white-text">
+          Proposal payments
+        </div>
+        <div class="card-body">
+          <table class="proposal-details-table table table-bordered table-sm table-hover">
+            <tbody>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="key"></mdb-icon>
+                  Payment Address
+                </td>
+                <td colspan="3" id="budgetpubkey">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="hourglass-start"></mdb-icon>
+                  Proposal Time-Span
+                </td>
+                <td id="budgetblockstart">???</td>
+                <td colspan="2" id="budgetblockend">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
+                  Monthly Amount
+                </td>
+                <td id="budgetmonthlyamount">???</td>
+                <td id="budgetmonthlyamountusd">???</td>
+                <td id="budgetmonthlyamounteur">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
+                  Remaining Amount
+                </td>
+                <td id="budgettotalamount">???</td>
+                <td id="budgettotalamountusd">???</td>
+                <td id="budgettotalamounteur">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="clock-o"></mdb-icon>
+                  Remaining Payments
+                </td>
+                <td id="budgetremainingpayments">???</td>
+                <td id="budgetremainingpaymentsnext">???</td>
+                <td id="budgetremainingpaymentsdate">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="clock-o"></mdb-icon>
+                  Total Payments
+                </td>
+                <td id="budgettotalpayments">???</td>
+                <td colspan="2" id="budgettotalpaymentspolis">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1 pr-1" icon="clock-o"></mdb-icon>
+                  Last Paid
+                </td>
+                <td colspan="3" id="budgetlastpaid">???</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <div class="card card-primary">
+        <div class="card-header primary-color white-text">
+          Proposal votes
+        </div>
+        <div class="card-body">
+          <table class="proposal-details-table table table-bordered table-sm table-hover">
+            <tbody>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1" icon="plus-square"></mdb-icon>
+                </td>
+                <th>Votes YES</th>
+                <td id="budgetyes" class="success">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1" icon="minus-square"></mdb-icon>
+                </td>
+                <th>Votes NO</th>
+                <td id="budgetno" class="danger">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1" icon="square"></mdb-icon>
+                </td>
+                <th>Votes ABSTAIN</th>
+                <td id="budgetabstain">???</td>
+              </tr>
+              <tr>
+                <td>
+                  <mdb-icon class="pl-1" icon="check-square"></mdb-icon>
+                </td>
+                <th>Votes YES still needed</th>
+                <td id="budgetyesremaining">???</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <span class="pull-left">Last data refresh:</span>
+          <span class="pull-right">
+            <span id="budgetinfoLR">Never</span>
+            <br>
+            <span id="budgetinfoLRHR"></span>
+          </span>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header pl-0">
+          <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark no-shadow pl-0">
+            <links>
+              <div class="navbar-nav pl-0 text-center">
+
+                <a [ngClass]="{'active-tab': tab==1 }" (click)="tab=1" href="javascript:void(0)" class="nav-item nav-link active waves-light"
+                  mdbWavesEffect>
+                  <mdb-icon icon="heart" size="md"></mdb-icon>
+                  Vote YES
+                </a>
+
+                <a [ngClass]="{'active-tab': tab==2 }" (click)="tab=2" href="javascript:void(0)" class="nav-item nav-link active waves-light"
+                  mdbWavesEffect>
+                  <mdb-icon icon="times-rectangle" size="md"></mdb-icon>
+                  Vote NO</a>
+
+                <a [ngClass]="{'active-tab': tab==3 }" (click)="tab=3" href="javascript:void(0)" class="nav-item nav-link active waves-light"
+                  mdbWavesEffect>
+                  <mdb-icon icon="stop" size="md"></mdb-icon>
+                  Vote ABSTAIN</a>
+
+              </div>
+            </links>
+          </mdb-navbar>
+        </div>
+        <div class="card-body" *ngIf="tab==1">
+          <p>From your masternode cold wallet. Go to Tools > Debug console and type: </p>
+
+          <code>gobject vote-many a63129a810069d7b3542256f480ec905f66e2923d6fb9edee90e28d4aacfb32d funding yes</code>
+          <br>
+          <br>
+          <p>To vote from Zest-cli (command line, zestd must be running)</p>
+          <code>
+          type: zest-cli gobject vote-many a63129a810069d7b3542256f480ec905f66e2923d6fb9edee90e28d4aacfb32d funding yes
+          </code>
+        </div>
+        <div class="card-body" *ngIf="tab==2">
+          <p>From your masternode cold wallet To vote from Zest (graphical wallet), go to Tools > Debug console and type:
+          </p>
+          <code>
+              gobject vote-many a63129a810069d7b3542256f480ec905f66e2923d6fb9edee90e28d4aacfb32d funding no
+          </code>
+          <br>
+
+          <br>
+          <p>To vote from zest-cli (command line, zestd must be running), type:</p>
+          <code>
+              zest-cli gobject vote-many a63129a810069d7b3542256f480ec905f66e2923d6fb9edee90e28d4aacfb32d funding no
+          </code>
+
+        </div>
+        <div class="card-body" *ngIf="tab==3">
+
+          <p>From your masternode cold wallet To vote from zest-qt (graphical wallet), go to Tools > Debug console and type:
+          </p>
+          <code>
+            gobject vote-many a63129a810069d7b3542256f480ec905f66e2923d6fb9edee90e28d4aacfb32d funding abstain
+          </code>
+          <br>
+          <br>
+          <p>To vote from zest-cli (command line, zestd must be running), type:</p>
+          <code>zest-cli gobject vote-many a63129a810069d7b3542256f480ec905f66e2923d6fb9edee90e28d4aacfb32d
+          funding abstain
+          </code>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-primary">
+        <div class="card-header primary-color white-text">
+          <div id="votes" class="card-heading">
+            Masternodes votes
+          </div>
+          <!-- /.card-heading -->
+          <div class="card-body">
+            <table class="proposal-details-table table table-bordered table-sm table-hover">
+              <tr>
+                <th>Date</th>
+                <th>Masternode Hash-Index</th>
+                <th>Vote</th>
+                <th>Vote Hash</th>
+              </tr>
+              <tbody>
+                <tr>
+                  <td colspan="4">Please wait while loading... (JavaScript neeeded)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <span class="pull-left">Last data refresh:</span>
+            <span class="pull-right">
+              <span id="votestableLR">Never</span>
+              <br>
+              <span id="votestableLRHR"></span>
+            </span>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

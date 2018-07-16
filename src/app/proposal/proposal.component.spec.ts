@@ -5,15 +5,14 @@ import { DebugElement } from '@angular/core';
 
 import { ProposalComponent } from './proposal.component';
 
-describe('ProposalComponent', () => {
+describe('ProposalsComponent', () => {
   let component: ProposalComponent;
   let fixture: ComponentFixture<ProposalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProposalComponent ]
-    })
-    .compileComponents();
+      declarations: [ProposalComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

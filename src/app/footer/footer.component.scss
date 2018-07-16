@@ -1,0 +1,29 @@
+.footer {
+  background-color: #424d68 !important;
+  color: #f9f9f9;
+  padding: 2rem;
+}
+
+.footer-social {
+  margin: 0 auto;
+}
+
+.social-media svg {
+  width: 2rem;
+  margin: 0 0.6rem;
+  color: #00f0c4;
+  display: block;
+  transition: 0.2s;
+}
+
+.social-media img {
+  width: 1.6rem;
+  margin: 0 0.6rem;
+  color: #00f0c4;
+  display: block;
+  transition: 0.2s;
+}
+
+.social-media svg:hover {
+  color: #f3f3f3;
+}

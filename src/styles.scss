@@ -1,27 +1,74 @@
+body {
+  color: #f1f1f1 !important;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .container {
   max-width: 1310px !important;
 }
 
 .container-padding {
-  padding-top: 1.25rem;
+  padding-top: 5.5rem;
 }
 
 a .clear-margin {
   margin: 0;
 }
 
+a {
+  transition-delay: 0.2;
+}
+
+a:hover,
+a:active {
+  color: #08eec3 !important;
+}
+
 .row {
   padding: 1.25rem 0 1.25rem 0;
 }
 
-// .mb-0 {
-//   margin-bottom: 0 !important;
-// }
+.btn {
+  font-size: 0.9rem;
+  // font-weight: bold;
+}
 
-// .wrapper {
-//   background: #59698d;
-// }
+.card-footer {
+  padding: 0.5rem;
+}
 
-// .wrapper h1 {
-//   color: #f9f9f9;
-// }
+.card-dark {
+  background-color: #59698d !important;
+  color: #fff !important;
+}
+
+.no-shadow {
+  box-shadow: none !important   ;
+}
+
+code {
+  margin-bottom: 1rem !important;
+  padding: 0.5rem;
+  background: #3e4551;
+  color: #d8d8d8;
+}
+
+.card-header {
+  background: #59698d !important;
+}
+
+.card-body {
+  background: #495674 !important;
+}
+
+.table-bordered {
+  border: #5f7094 1px dashed !important;
+}
+
+.proposal-details-table td,
+.proposal-details-table tr,
+.proposal-details-table th,
+.proposal-details-table tbody {
+  border: #5f7094 1px dashed !important;
+}
