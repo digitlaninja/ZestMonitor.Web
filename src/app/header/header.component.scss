@@ -1,3 +1,12 @@
 a:hover {
-  color: #1c2331 !important;
+  color: #d9dfeb !important;
+  border: #08ddb67a dotted 1px;
+  transition: step-start;
+}
+
+a {
+  color: #08ddb6 !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: transparent dotted 1px;
 }
