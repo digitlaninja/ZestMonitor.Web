@@ -1,0 +1,56 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Config } from '../config/config';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ProposalMetaData } from '../_models/ProposalMetaData';
+import { BlockchainProposal } from '../_models/BlockchainProposal';
+import { PaginatedResult } from '../_models/pagination';
+import { ProposalPayment } from '../_models/ProposalPayment';
+
+@Injectable()
+export class ProposalPaymentsService {
+  private blockchainController = `${this.config.apiPath}/blockchainproposals`;
+  private proposalPaymentsController = `${this.config.apiPath}/proposalpayments`;
+  constructor(private http: HttpClient, private config: Config) {}
+
+  public getProposalMetadata(): Observable<ProposalMetaData> {
+    return this.http.get<ProposalMetaData>(`${this.blockchainController}/metadata`, { observe: 'response' }).pipe(
+      map((response) => {
+        return response.body;
+      })
+    );
+  }
+
+  public getProposal(name: string): Observable<BlockchainProposal> {
+    return this.http.get<BlockchainProposal>(`${this.blockchainController}/${name}`, { observe: 'response' }).pipe(
+      map((response) => {
+        console.log(response.body);
+        return response.body;
+      })
+    );
+  }
+
+  public getProposalPayment(hash: string): Observable<ProposalPayment> {
+    return this.http.get<ProposalPayment>(`${this.proposalPaymentsController}/${hash}`, { observe: 'response' }).pipe(
+      map((response) => {
+        return response.body;
+      })
+    );
+  }
+
+  public getPaged(page?, itemsPerPage?): Observable<PaginatedResult<BlockchainProposal[]>> {
+    const paginatedResult: PaginatedResult<BlockchainProposal[]> = new PaginatedResult<BlockchainProposal[]>();
+    const params = new HttpParams({ fromObject: { pageNumber: page, pageSize: itemsPerPage } });
+
+    return this.http.get<BlockchainProposal[]>(this.blockchainController, { observe: 'response', params }).pipe(
+      map((response) => {
+        paginatedResult.result = response.body;
+        if (response.headers.get('Pagination') != null) {
+          paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
+        }
+        return paginatedResult;
+      })
+    );
+  }
+}

@@ -10,10 +10,31 @@ import { GovernanceComponent } from './governance/governance.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { BudgetProposalsDetailsComponent } from './budget-proposals-details/budget-proposals-details.component';
 import { ProposalPaymentsComponent } from './proposal-payments/proposal-payments.component';
+import { ProposalPaymentsService } from './_services/proposal-payments.service';
+import { HttpClientModule } from '@angular/common/http';
+import { Config } from './config/config';
+import { ProposalPaymentsResolver } from './_resolvers/proposal-payments-list.resolver';
+import { ProposalPaymentsMetadataResolver } from './_resolvers/proposal-payments-metadata.resolver';
+import { PaginationModule, PaginationConfig } from 'ngx-bootstrap';
 
 const appRoutes: Routes = [
-  { path: 'governance', component: GovernanceComponent },
-  { path: 'proposal', component: ProposalComponent }
+  {
+    path: '',
+    redirectTo: 'governance',
+    pathMatch: 'full'
+  },
+  {
+    path: 'governance',
+    component: GovernanceComponent,
+    resolve: {
+      proposals: ProposalPaymentsResolver,
+      proposalMetadata: ProposalPaymentsMetadataResolver
+    }
+  },
+  {
+    path: 'proposal/:name',
+    component: ProposalComponent
+  }
 ];
 
 @NgModule({
@@ -23,13 +44,12 @@ const appRoutes: Routes = [
     HeaderComponent,
     GovernanceComponent,
     ProposalComponent,
-    ProposalComponent,
     BudgetProposalsDetailsComponent,
     ProposalPaymentsComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot()],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot(), PaginationModule, HttpClientModule],
   schemas: [NO_ERRORS_SCHEMA],
-  // providers: [],
+  providers: [ProposalPaymentsService, Config, ProposalPaymentsResolver, ProposalPaymentsMetadataResolver, PaginationConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

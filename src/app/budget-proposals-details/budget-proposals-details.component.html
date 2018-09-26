@@ -8,10 +8,10 @@
         <table class="table table-hover table-sm table-striped">
           <thead>
             <tr>
-              <th>Date&nbsp;Added</th>
+              <!-- <th>Date&nbsp;Added</th> -->
               <th>Name</th>
-              <th>Start</th>
-              <th>End</th>
+              <!-- <th>Start</th> -->
+              <!-- <th>End</th> -->
               <th>Amount</th>
               <th>Votes Yes</th>
               <th>Votes No</th>
@@ -19,25 +19,24 @@
               <th>Total Ratio</th>
               <th>Valid</th>
               <th>Funded</th>
-              <th>Last Seen</th>
+              <!-- <th>Last Seen</th> -->
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>07/02/2018</td>
-              <td>Bringing Zest to South Africa</td>
-              <td>07/07/2018</td>
-              <td>31/12/2018</td>
-              <td>150 000 Zest</td>
-              <td>1251</td>
-              <td>23</td>
-              <td>0</td>
-              <td>5%</td>
-              <td>Yes</td>
-              <td>No</td>
-              <td>Just now</td>
+            <tr *ngFor="let proposal of proposals">
+              <!-- <td></td> -->
+              <td>{{proposal.Name}}</td>
+              <!-- <td>07/07/2018</td> -->
+              <!-- <td>31/12/2018</td> -->
+              <td>{{proposal.Amount}}</td>
+              <td>{{proposal.Yeas}}</td>
+              <td>{{proposal.Nays}}</td>
+              <td>{{proposal.Abstains}}</td>
+              <td>{{proposal.Ratio}}</td>
+              <td>{{proposal.IsValid}}</td>
+              <td>{{proposal.IsEstablished}}</td>
+              <!-- <td>Just now</td> -->
             </tr>
-
           </tbody>
         </table>
       </div>

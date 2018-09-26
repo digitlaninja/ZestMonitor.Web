@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BlockchainProposal } from '../_models/BlockchainProposal';
 
 @Component({
   selector: 'app-budget-proposals-details',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./budget-proposals-details.component.scss']
 })
 export class BudgetProposalsDetailsComponent implements OnInit {
+  @Input()
+  public proposals: BlockchainProposal[] = [];
   constructor() {}
 
   ngOnInit() {}

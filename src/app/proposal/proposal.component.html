@@ -21,32 +21,32 @@
                   <mdb-icon class="pr-1 pl-1" icon="link"></mdb-icon>
                   Proposal URL
                 </td>
-
-                <td id="budgeturl">???</td>
+                <td id="budgeturl">
+                  <a href="{{blockchainProposal.url}}">{{blockchainProposal.url}}</a>
+                </td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pr-1 pl-1" icon="heartbeat"></mdb-icon>
                   Budget Status
                 </td>
-
-                <td id="budgetstatus">???</td>
+                <td id="budgetstatus">{{blockchainProposal.isValid}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pr-1 pl-1" icon="sign-in"></mdb-icon>
                   Proposal Hash
                 </td>
-                <td id="budgethash">???</td>
+                <td id="budgethash">{{blockchainProposal.hash}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pr-1 pl-1" icon="sign-out"></mdb-icon>
                   Proposal Fee Transaction
                 </td>
-                <td id="budgetfee">???</td>
+                <td id="budgetfee">{{blockchainProposal.feeHash}}</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>
                   <mdb-icon class="pr-1 pl-1" icon="clock-o"></mdb-icon>
                   Last Seen
@@ -59,7 +59,7 @@
                   First Seen
                 </td>
                 <td id="budgetfirstseen">???</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -79,9 +79,9 @@
               <tr>
                 <td>
                   <mdb-icon class="pl-1 pr-1" icon="key"></mdb-icon>
-                  Payment Address
+                  Short Description
                 </td>
-                <td colspan="3" id="budgetpubkey">???</td>
+                <td colspan="3" id="budgetpubkey">{{blockchainProposal.hash}}</td>
               </tr>
               <tr>
                 <td>
