@@ -25,7 +25,6 @@ export class ProposalPaymentsService {
   public getProposal(name: string): Observable<BlockchainProposal> {
     return this.http.get<BlockchainProposal>(`${this.blockchainController}/${name}`, { observe: 'response' }).pipe(
       map((response) => {
-        console.log(response.body);
         return response.body;
       })
     );

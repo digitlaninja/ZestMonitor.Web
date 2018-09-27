@@ -81,59 +81,37 @@
                   <mdb-icon class="pl-1 pr-1" icon="key"></mdb-icon>
                   Short Description
                 </td>
-                <td colspan="3" id="budgetpubkey">{{blockchainProposal.hash}}</td>
+                <td colspan="3" id="budgetpubkey">{{proposalPayment.shortDescription}}</td>
               </tr>
+
               <tr>
                 <td>
-                  <mdb-icon class="pl-1 pr-1" icon="hourglass-start"></mdb-icon>
-                  Proposal Time-Span
+                  <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
+                  Payment ($)
                 </td>
-                <td id="budgetblockstart">???</td>
-                <td colspan="2" id="budgetblockend">???</td>
+                <td id="budgettotalamount">{{proposalPayment.amount}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
-                  Monthly Amount
+                  Expected Payment (ZEST)
                 </td>
-                <td id="budgetmonthlyamount">???</td>
-                <td id="budgetmonthlyamountusd">???</td>
-                <td id="budgetmonthlyamounteur">???</td>
+                <td id="budgettotalamount">{{proposalPayment.expectedPayment}}</td>
               </tr>
-              <tr>
+              <tr class="pl-1 pr-1" *ngIf="!proposalPayment; else payment">
                 <td>
-                  <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
-                  Remaining Amount
+                  <mdb-icon class="pl-1 pr-1" icon="close"></mdb-icon>
+                  (No payments added)
                 </td>
-                <td id="budgettotalamount">???</td>
-                <td id="budgettotalamountusd">???</td>
-                <td id="budgettotalamounteur">???</td>
-              </tr>
-              <tr>
+                <ng-template #payment>
+                  <mdb-icon class="pl-1 pr-1" icon="check"></mdb-icon>
+                  Payment
+                </ng-template>
                 <td>
-                  <mdb-icon class="pl-1 pr-1" icon="clock-o"></mdb-icon>
-                  Remaining Payments
                 </td>
-                <td id="budgetremainingpayments">???</td>
-                <td id="budgetremainingpaymentsnext">???</td>
-                <td id="budgetremainingpaymentsdate">???</td>
-              </tr>
-              <tr>
-                <td>
-                  <mdb-icon class="pl-1 pr-1" icon="clock-o"></mdb-icon>
-                  Total Payments
-                </td>
-                <td id="budgettotalpayments">???</td>
-                <td colspan="2" id="budgettotalpaymentspolis">???</td>
-              </tr>
-              <tr>
-                <td>
-                  <mdb-icon class="pl-1 pr-1" icon="clock-o"></mdb-icon>
-                  Last Paid
-                </td>
-                <td colspan="3" id="budgetlastpaid">???</td>
               </tr>
             </tbody>
+
           </table>
         </div>
       </div>
@@ -151,21 +129,21 @@
                   <mdb-icon class="pl-1" icon="plus-square"></mdb-icon>
                 </td>
                 <th>Votes YES</th>
-                <td id="budgetyes" class="success">???</td>
+                <td id="budgetyes" class="success">{{blockchainProposal.yeas}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pl-1" icon="minus-square"></mdb-icon>
                 </td>
                 <th>Votes NO</th>
-                <td id="budgetno" class="danger">???</td>
+                <td id="budgetno" class="danger">{{blockchainProposal.nays}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pl-1" icon="square"></mdb-icon>
                 </td>
                 <th>Votes ABSTAIN</th>
-                <td id="budgetabstain">???</td>
+                <td id="budgetabstain">{{blockchainProposal.abstains}}</td>
               </tr>
               <tr>
                 <td>
@@ -176,14 +154,6 @@
               </tr>
             </tbody>
           </table>
-
-          <span class="pull-left">Last data refresh:</span>
-          <span class="pull-right">
-            <span id="budgetinfoLR">Never</span>
-            <br>
-            <span id="budgetinfoLRHR"></span>
-          </span>
-          <div class="clearfix"></div>
         </div>
       </div>
     </div>

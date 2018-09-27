@@ -16,6 +16,7 @@ import { Config } from './config/config';
 import { ProposalPaymentsResolver } from './_resolvers/proposal-payments-list.resolver';
 import { ProposalPaymentsMetadataResolver } from './_resolvers/proposal-payments-metadata.resolver';
 import { PaginationModule, PaginationConfig } from 'ngx-bootstrap';
+import { ProposalResolver } from './_resolvers/proposal.resolver';
 
 const appRoutes: Routes = [
   {
@@ -33,7 +34,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'proposal/:name',
-    component: ProposalComponent
+    component: ProposalComponent,
+    resolve: {
+      blockchainProposal: ProposalResolver
+    }
   }
 ];
 
@@ -49,7 +53,14 @@ const appRoutes: Routes = [
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot(), PaginationModule, HttpClientModule],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [ProposalPaymentsService, Config, ProposalPaymentsResolver, ProposalPaymentsMetadataResolver, PaginationConfig],
+  providers: [
+    ProposalPaymentsService,
+    Config,
+    ProposalPaymentsResolver,
+    ProposalPaymentsMetadataResolver,
+    ProposalResolver,
+    PaginationConfig
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

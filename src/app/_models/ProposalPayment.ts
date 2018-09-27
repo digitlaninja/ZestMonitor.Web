@@ -1,7 +1,7 @@
 export interface ProposalPayment {
-  Hash: string;
-  ShortDescription: string;
-  Amount: number;
-  ExpectedPayment: number;
-  CreatedAt: string;
+  hash: string;
+  shortDescription: string;
+  amount: number;
+  expectedPayment: number;
+  createdAt: string;
 }

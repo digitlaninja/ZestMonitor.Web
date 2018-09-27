@@ -16,6 +16,7 @@ export class ProposalComponent implements OnInit {
   blockchainProposal: BlockchainProposal;
   proposalPayment: ProposalPayment;
   name: string;
+  hash: string;
   constructor(private proposalPaymentsService: ProposalPaymentsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -23,13 +24,33 @@ export class ProposalComponent implements OnInit {
       this.name = params['name'];
     });
 
-    this.getProposal(this.name).subscribe((res: BlockchainProposal) => {
-      this.blockchainProposal = res;
+    // this.getProposal(this.name).subscribe((res: BlockchainProposal) => {
+    //   console.log(`----- Proposal`, res);
+    //   this.blockchainProposal = res;
+    //   this.hash = res.hash;
+    // });
+
+    this.route.data.subscribe((data) => {
+      this.blockchainProposal = data['blockchainProposal'];
+    });
+    // this.loadProposalPayments();
+
+    this.getProposalpayment(this.blockchainProposal.hash).subscribe((res: ProposalPayment) => {
+      console.log(`----- Proposal Payment`, res);
+      this.proposalPayment = res;
     });
   }
 
   public getProposal(name: string): Observable<BlockchainProposal> {
     return this.proposalPaymentsService.getProposal(this.name).pipe(
+      catchError((error) => {
+        return of(null); // creates fake response, as no real backend call needed
+      })
+    );
+  }
+
+  public getProposalpayment(hash: string): Observable<ProposalPayment> {
+    return this.proposalPaymentsService.getProposalPayment(hash).pipe(
       catchError((error) => {
         return of(null); // creates fake response, as no real backend call needed
       })
