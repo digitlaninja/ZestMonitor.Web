@@ -11,7 +11,7 @@
     <div class="col-md-6">
       <div class="card text-center">
         <div class="card-header primary-color white-text">
-          Proposal #
+          Overview
         </div>
         <div class="card-body">
           <!-- <h4 class="card-title">Special title treatment</h4> -->
@@ -38,73 +38,72 @@
         </div>
       </div>
     </div>
+    <!-- ./Governance Proposals -->
 
-  </div>
-  <!-- ./Governance Proposals -->
-
-  <div class="row">
-    <div class="col-md-12">
+    <!-- Budget Proposal info -->
+    <div class="col-md-6">
       <div class="card">
         <div class="card-header primary-color white-text">
           Budget proposals info
         </div>
-        <div class="card-body">
+        <div class="card-body proposal-info-spacing">
           <p>A governance proposal is
             <strong>valid</strong> if the fee was payed and it was submitted to peers successfully.</p>
           <p class="mb-0">A governance proposal is
             <strong>funded</strong> (will get paid on next super-block if enough funding available in next super-block.</p>
         </div>
-        <button type="button" class="btn btn-primary waves-light" mdbWavesEffect>
+        <div class="card-footer text-muted primary-color white-text text-center">
+          <p class="mb-0">Read more about our governance and budget system</p>
+        </div>
+        <!-- <button type="button" class="btn btn-primary waves-light" mdbWavesEffect>
           Read more about our governance and budget system
           <mdb-icon class="pl-1" icon="arrow-right"></mdb-icon>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
-
-
-  <!-- <app-budget-proposals-details [proposals]="governanceProposals"></app-budget-proposals-details> -->
+  <!-- ./Budget Proposal info -->
 
   <div class="row">
     <div class="col-md-12">
       <div class="card">
         <div class="card-header primary-color lighten-1 white-text">
-          Budget Proposal Details
+          Budget Proposals
         </div>
         <div class="card-body">
           <table class="table table-hover table-sm table-striped">
             <thead>
               <tr>
-                <!-- <th>Date&nbsp;Added</th> -->
-                <th>Name</th>
-                <!-- <th>Start</th> -->
-                <!-- <th>End</th> -->
-                <th>Amount</th>
-                <th>Votes Yes</th>
-                <th>Votes No</th>
-                <th>Votes Abstain</th>
-                <th>Total Ratio</th>
-                <th>Valid</th>
-                <th>Funded</th>
-                <!-- <th>Last Seen</th> -->
+                <th class="pl-1">Name</th>
+                <th class="pl-1">Amount</th>
+                <th class="pl-1">Votes Yes</th>
+                <th class="pl-1">Votes No</th>
+                <th class="pl-1">Votes Abstain</th>
+                <th class="pl-1">Total Ratio</th>
+                <th class="pl-1">Valid</th>
+                <th class="pl-1">Funded</th>
+                <th class="pl-1">View</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let proposal of proposals">
-                <!-- <td></td> -->
                 <td>
-                  <a [routerLink]="['/proposal', proposal.name]">{{proposal.name}}</a>
+                  <a [routerLink]="['/proposal', proposal.name]">
+                    {{proposal.name}}
+                  </a>
                 </td>
-                <!-- <td>07/07/2018</td> -->
-                <!-- <td>31/12/2018</td> -->
                 <td>{{proposal.amount}}</td>
                 <td>{{proposal.yeas}}</td>
                 <td>{{proposal.nays}}</td>
                 <td>{{proposal.abstains}}</td>
-                <td>{{proposal.ratio}}</td>
+                <td>{{proposal.ratio | rounddecimal}}</td>
                 <td>{{proposal.isValid}}</td>
                 <td>{{proposal.isFunded}}</td>
-                <!-- <td>Just now</td> -->
+                <td>
+                  <a [routerLink]="['/proposal', proposal.name]">
+                    <mdb-icon icon="eye"></mdb-icon>
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>

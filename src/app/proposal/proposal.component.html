@@ -22,7 +22,7 @@
                   Proposal URL
                 </td>
                 <td id="budgeturl">
-                  <a href="{{blockchainProposal.url}}">{{blockchainProposal.url}}</a>
+                  <a target="_blank" href="{{blockchainProposal.url}}">{{blockchainProposal.url}}</a>
                 </td>
               </tr>
               <tr>
@@ -46,20 +46,6 @@
                 </td>
                 <td id="budgetfee">{{blockchainProposal.feeHash}}</td>
               </tr>
-              <!-- <tr>
-                <td>
-                  <mdb-icon class="pr-1 pl-1" icon="clock-o"></mdb-icon>
-                  Last Seen
-                </td>
-                <td id="budgetlastseen">???</td>
-              </tr>
-              <tr>
-                <td>
-                  <mdb-icon class="pr-1 pl-1" icon="play-circle-o"></mdb-icon>
-                  First Seen
-                </td>
-                <td id="budgetfirstseen">???</td>
-              </tr> -->
             </tbody>
           </table>
         </div>
@@ -81,7 +67,7 @@
                   <mdb-icon class="pl-1 pr-1" icon="key"></mdb-icon>
                   Short Description
                 </td>
-                <td colspan="3" id="budgetpubkey">{{proposalPayment.shortDescription}}</td>
+                <td>{{proposalPayment.shortDescription}}</td>
               </tr>
 
               <tr>
@@ -89,14 +75,14 @@
                   <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
                   Payment ($)
                 </td>
-                <td id="budgettotalamount">{{proposalPayment.amount}}</td>
+                <td>{{proposalPayment.amount}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
                   Expected Payment (ZEST)
                 </td>
-                <td id="budgettotalamount">{{proposalPayment.expectedPayment}}</td>
+                <td>{{proposalPayment.expectedPayment}}</td>
               </tr>
               <tr class="pl-1 pr-1" *ngIf="!proposalPayment; else payment">
                 <td>
@@ -111,7 +97,6 @@
                 </td>
               </tr>
             </tbody>
-
           </table>
         </div>
       </div>
@@ -250,7 +235,7 @@
               </tr>
               <tbody>
                 <tr>
-                  <td colspan="4">Please wait while loading... (JavaScript neeeded)</td>
+                  <td colspan="4"></td>
                 </tr>
               </tbody>
             </table>

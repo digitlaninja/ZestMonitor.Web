@@ -81,6 +81,17 @@ mdb-navbar > nav {
   background: #8c454cba !important;
 }
 
+.table td {
+  padding-left: 0.6rem;
+}
+
+.table td a {
+  color: #f1f1f1 !important;
+}
+
+.table td a:hover {
+  color: #08ddb6 !important;
+}
 /*==========================
 | HOVER
 ====================*/

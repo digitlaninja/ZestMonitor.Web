@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { GovernanceComponent } from './governance/governance.component';
 import { ProposalComponent } from './proposal/proposal.component';
-import { BudgetProposalsDetailsComponent } from './budget-proposals-details/budget-proposals-details.component';
 import { ProposalPaymentsComponent } from './proposal-payments/proposal-payments.component';
 import { ProposalPaymentsService } from './_services/proposal-payments.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +16,7 @@ import { ProposalPaymentsResolver } from './_resolvers/proposal-payments-list.re
 import { ProposalPaymentsMetadataResolver } from './_resolvers/proposal-payments-metadata.resolver';
 import { PaginationModule, PaginationConfig } from 'ngx-bootstrap';
 import { ProposalResolver } from './_resolvers/proposal.resolver';
+import { RoundDecimalPipe } from './_pipes/rounddecimal.pipe';
 
 const appRoutes: Routes = [
   {
@@ -48,8 +48,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     GovernanceComponent,
     ProposalComponent,
-    BudgetProposalsDetailsComponent,
-    ProposalPaymentsComponent
+    ProposalPaymentsComponent,
+    RoundDecimalPipe
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot(), PaginationModule, HttpClientModule],
   schemas: [NO_ERRORS_SCHEMA],

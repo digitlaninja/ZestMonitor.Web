@@ -23,7 +23,6 @@ export class GovernanceComponent implements OnInit {
       this.pagination = data['proposals'].pagination;
       this.proposalMetadata = data['proposalMetadata'];
     });
-    // this.loadProposalPayments();
   }
 
   loadProposalPayments(): void {
