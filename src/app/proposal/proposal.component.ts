@@ -36,8 +36,19 @@ export class ProposalComponent implements OnInit {
     // this.loadProposalPayments();
 
     this.getProposalpayment(this.blockchainProposal.hash).subscribe((res: ProposalPayment) => {
-      console.log(`----- Proposal Payment`, res);
-      this.proposalPayment = res;
+      if (!res) {
+        this.proposalPayment = {
+          hash: '',
+          shortDescription: '',
+          amount: 0,
+          expectedPayment: 0,
+          createdAt: ''
+        };
+        return;
+        console.log(this.proposalPayment.hash);
+      } else {
+        this.proposalPayment = res;
+      }
     });
   }
 

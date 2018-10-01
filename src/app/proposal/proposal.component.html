@@ -67,7 +67,7 @@
                   <mdb-icon class="pl-1 pr-1" icon="key"></mdb-icon>
                   Short Description
                 </td>
-                <td>{{proposalPayment.shortDescription}}</td>
+                <td>{{proposalPayment.shortDescription === '' ? '-' : proposalPayment.shortDescription }}</td>
               </tr>
 
               <tr>
