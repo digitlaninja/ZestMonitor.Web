@@ -74,19 +74,21 @@
           <table class="table table-hover table-sm table-striped">
             <thead>
               <tr>
-                <th class="pl-1">Name</th>
-                <th class="pl-1">Amount</th>
-                <th class="pl-1">Votes Yes</th>
-                <th class="pl-1">Votes No</th>
-                <th class="pl-1">Votes Abstain</th>
-                <th class="pl-1">Total Ratio</th>
-                <th class="pl-1">Valid</th>
-                <th class="pl-1">Funded</th>
-                <th class="pl-1">View</th>
+                <th class="pl-2">Time</th>
+                <th class="pl-2">Name</th>
+                <th class="pl-2">Amount</th>
+                <th class="pl-2">Votes Yes</th>
+                <th class="pl-2">Votes No</th>
+                <th class="pl-2">Votes Abstain</th>
+                <th class="pl-2">Total Ratio</th>
+                <th class="pl-2">Valid</th>
+                <th class="pl-2">Funded</th>
+                <th class="pl-2">View</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let proposal of proposals">
+                <td>{{proposal.time}}</td>
                 <td>
                   <a [routerLink]="['/proposal', proposal.name]">
                     {{proposal.name}}
@@ -99,7 +101,7 @@
                 <td>{{proposal.ratio | rounddecimal}}</td>
                 <td>{{proposal.isValid}}</td>
                 <td>{{proposal.isFunded}}</td>
-                <td>
+                <td class="text-center pr-2">
                   <a [routerLink]="['/proposal', proposal.name]">
                     <mdb-icon icon="eye"></mdb-icon>
                   </a>

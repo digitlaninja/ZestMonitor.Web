@@ -1,4 +1,5 @@
 export interface BlockchainProposal {
+  time: string;
   name: string;
   url: string;
   hash: string;
