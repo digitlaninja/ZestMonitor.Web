@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <h1 class="page-header">
         <mdb-icon icon="tag" aria-hidden="true"></mdb-icon>
-        <span id="budgetid">___</span> proposal</h1>
+        <span id="budgetid">{{blockchainProposal.name}}</span> proposal</h1>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
                   Proposal URL
                 </td>
                 <td id="budgeturl">
-                  <a target="_blank" href="{{blockchainProposal.url}}">{{blockchainProposal.url}}</a>
+                  <a target="_blank" href="{{'http://'+blockchainProposal.url}}">{{blockchainProposal.url}}</a>
                 </td>
               </tr>
               <tr>

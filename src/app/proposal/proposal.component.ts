@@ -14,9 +14,16 @@ import { catchError } from 'rxjs/operators';
 export class ProposalComponent implements OnInit {
   tab: number;
   blockchainProposal: BlockchainProposal;
-  proposalPayment: ProposalPayment;
+  proposalPayment: ProposalPayment = {
+    amount: 0,
+    createdAt: '',
+    expectedPayment: 0,
+    hash: '',
+    shortDescription: ''
+  };
   name: string;
   hash: string;
+
   constructor(private proposalPaymentsService: ProposalPaymentsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -24,16 +31,9 @@ export class ProposalComponent implements OnInit {
       this.name = params['name'];
     });
 
-    // this.getProposal(this.name).subscribe((res: BlockchainProposal) => {
-    //   console.log(`----- Proposal`, res);
-    //   this.blockchainProposal = res;
-    //   this.hash = res.hash;
-    // });
-
     this.route.data.subscribe((data) => {
       this.blockchainProposal = data['blockchainProposal'];
     });
-    // this.loadProposalPayments();
 
     this.getProposalpayment(this.blockchainProposal.hash).subscribe((res: ProposalPayment) => {
       if (!res) {
@@ -45,7 +45,6 @@ export class ProposalComponent implements OnInit {
           createdAt: ''
         };
         return;
-        console.log(this.proposalPayment.hash);
       } else {
         this.proposalPayment = res;
       }

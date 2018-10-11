@@ -16,20 +16,22 @@
         <div class="card-body">
           <!-- <h4 class="card-title">Special title treatment</h4> -->
           <span class="pull-left">Vote deadline:</span>
-          <span class="pull-right" id="globalnextvotelimitdate" style="font-weight: bold">???</span>
+          <span class="pull-right" id="globalnextvotelimitdate">
+            {{this.proposalMetadata.voteDeadline === null ? "No open vote" : this.proposalMetadata.voteDeadline}}</span>
           <br>
           <span class="pull-left">Time left:</span>
-          <span class="pull-right" id="globalnextvotelimitremaining" style="font-weight: bold">???</span>
+          <span class="pull-right" id="globalnextvotelimitremaining">
+            {{this.proposalMetadata.daysLeft === null ? "No open vote" : this.proposalMetadata.daysLeft + " days"}}</span>
           <br>
           <hr>
           <span class="pull-left">Valid proposals:</span>
-          <span class="pull-right label label-warning" id="globalvalidbudget">{{this.proposalMetadata.validProposalCount}}</span>
+          <span class="pull-right label label-warning">{{this.proposalMetadata.validProposalCount}}</span>
           <br>
           <span class="pull-left">Funded proposals:</span>
-          <span class="pull-right label label-success" id="globalestablishedbudget">{{this.proposalMetadata.fundedProposalCount}}</span>
+          <span class="pull-right label label-success">{{this.proposalMetadata.fundedProposalCount}}</span>
           <br>
           <span class="pull-left">Funded amount:</span>
-          <span class="pull-right label label-success" id="globalestablishedbudgetamount">{{this.proposalMetadata.fundedProposalAmount}}</span>
+          <span class="pull-right label label-success">{{this.proposalMetadata.fundedProposalAmount}}</span>
           <br>
           <!-- <a class="pull-left btn btn-success btn-sm waves-light" mdbWavesEffect>Go somewhere</a> -->
         </div>
@@ -55,10 +57,6 @@
         <div class="card-footer text-muted primary-color white-text text-center">
           <p class="mb-0">Read more about our governance and budget system</p>
         </div>
-        <!-- <button type="button" class="btn btn-primary waves-light" mdbWavesEffect>
-          Read more about our governance and budget system
-          <mdb-icon class="pl-1" icon="arrow-right"></mdb-icon>
-        </button> -->
       </div>
     </div>
   </div>
@@ -110,10 +108,9 @@
             </tbody>
           </table>
           <div class="d-flex justify-content-center ">
-            <pagination [boundaryLinks]="true " [totalItems]="pagination.totalItems " [itemsPerPage]="pagination.itemsPerPage
-                    " [(ngModel)]="pagination.currentPage " (pageChanged)="pageChanged($event) " previousText="&lsaquo; "
-              nextText="&rsaquo; " firstText="&laquo;
-                    " lastText="&raquo; ">
+            <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage
+                    " [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
+              firstText="&laquo;" lastText="&raquo;">
             </pagination>
           </div>
         </div>

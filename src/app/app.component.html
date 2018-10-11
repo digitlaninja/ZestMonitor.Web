@@ -1,5 +1,11 @@
-<app-header></app-header>
+<app-header>
+</app-header>
 <div class="wrapper">
+  <div *ngIf="!loading">
     <router-outlet></router-outlet>
     <app-footer></app-footer>
+  </div>
+</div>
+<div *ngIf="loading">
+  <h1 class="text-black-50">Loading...</h1>
 </div>
