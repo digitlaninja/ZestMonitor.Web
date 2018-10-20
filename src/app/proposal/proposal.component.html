@@ -64,25 +64,26 @@
             <tbody>
               <tr>
                 <td>
-                  <mdb-icon class="pl-1 pr-1" icon="key"></mdb-icon>
+                  <mdb-icon class="pl-1 pr-1" icon="info-circle"></mdb-icon>
                   Short Description
                 </td>
-                <td>{{proposalPayment.shortDescription === '' ? '-' : proposalPayment.shortDescription }}</td>
+                <td>{{proposalPayment.shortDescription === '' ? '-' : proposalPayment.shortDescription.substring(0,220) }}{{proposalPayment.shortDescription.length
+                  >= 220 ? '...' : ''}}</td>
               </tr>
 
               <tr>
                 <td>
                   <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
-                  Payment ($)
+                  Payment
                 </td>
-                <td>{{proposalPayment.amount}}</td>
+                <td>$ {{proposalPayment.amount}}</td>
               </tr>
               <tr>
                 <td>
                   <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
-                  Expected Payment (ZEST)
+                  Expected Payment
                 </td>
-                <td>{{proposalPayment.expectedPayment}}</td>
+                <td>ZEST {{proposalPayment.expectedPayment}} </td>
               </tr>
               <tr class="pl-1 pr-1" *ngIf="!proposalPayment; else payment">
                 <td>
@@ -217,14 +218,13 @@
     </div>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-12">
       <div class="card card-primary">
         <div class="card-header primary-color white-text">
           <div id="votes" class="card-heading">
             Masternodes votes
           </div>
-          <!-- /.card-heading -->
           <div class="card-body">
             <table class="proposal-details-table table table-bordered table-sm table-hover">
               <tr>
@@ -252,5 +252,4 @@
         </div>
       </div>
     </div>
-
-  </div>
+  </div> -->

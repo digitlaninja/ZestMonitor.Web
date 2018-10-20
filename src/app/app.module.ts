@@ -19,11 +19,6 @@ import { ProposalResolver } from './_resolvers/proposal.resolver';
 import { RoundDecimalPipe } from './_pipes/rounddecimal.pipe';
 
 const appRoutes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'governance',
-  //   pathMatch: 'full'
-  // },
   {
     path: 'governance',
     component: GovernanceComponent,
