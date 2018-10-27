@@ -17,8 +17,14 @@ import { ProposalPaymentsMetadataResolver } from './_resolvers/proposal-payments
 import { PaginationModule, PaginationConfig } from 'ngx-bootstrap';
 import { ProposalResolver } from './_resolvers/proposal.resolver';
 import { RoundDecimalPipe } from './_pipes/rounddecimal.pipe';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: 'governance',
+    pathMatch: 'full'
+  },
   {
     path: 'governance',
     component: GovernanceComponent,
@@ -33,7 +39,8 @@ const appRoutes: Routes = [
     resolve: {
       blockchainProposal: ProposalResolver
     }
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -44,6 +51,7 @@ const appRoutes: Routes = [
     GovernanceComponent,
     ProposalComponent,
     ProposalPaymentsComponent,
+    PageNotFoundComponent,
     RoundDecimalPipe
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), MDBBootstrapModule.forRoot(), PaginationModule, HttpClientModule],
