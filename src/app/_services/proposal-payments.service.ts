@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Config } from '../config/config';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ProposalMetaData } from '../_models/ProposalMetaData';
 import { BlockchainProposal } from '../_models/BlockchainProposal';
 import { PaginatedResult } from '../_models/pagination';
 import { ProposalPayment } from '../_models/ProposalPayment';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ProposalPaymentsService {
-  private blockchainController = `${this.config.apiPath}/blockchainproposals`;
-  private proposalPaymentsController = `${this.config.apiPath}/proposalpayments`;
-  constructor(private http: HttpClient, private config: Config) {}
+  private blockchainController = `${environment.apiUrl}/blockchainproposals`;
+  private proposalPaymentsController = `${environment.apiUrl}/proposalpayments`;
+  constructor(private http: HttpClient) {}
 
   public getProposalMetadata(): Observable<ProposalMetaData> {
     return this.http.get<ProposalMetaData>(`${this.blockchainController}/metadata`, { observe: 'response' }).pipe(

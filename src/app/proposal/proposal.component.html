@@ -60,7 +60,7 @@
           Proposal payments
         </div>
         <div class="card-body">
-          <table class="proposal-details-table table table-bordered table-sm table-hover">
+          <table class="proposal-details-table table table-bordered table-sm table-hover" *ngIf="proposalPayment.hash; else payment">
             <tbody>
               <tr>
                 <td>
@@ -70,7 +70,6 @@
                 <td>{{proposalPayment.shortDescription === '' ? '-' : proposalPayment.shortDescription.substring(0,220) }}{{proposalPayment.shortDescription.length
                   >= 220 ? '...' : ''}}</td>
               </tr>
-
               <tr>
                 <td>
                   <mdb-icon class="pl-1 pr-1" icon="money"></mdb-icon>
@@ -85,20 +84,13 @@
                 </td>
                 <td>ZEST {{proposalPayment.expectedPayment}} </td>
               </tr>
-              <tr class="pl-1 pr-1" *ngIf="!proposalPayment; else payment">
-                <td>
-                  <mdb-icon class="pl-1 pr-1" icon="close"></mdb-icon>
-                  (No payments added)
-                </td>
-                <ng-template #payment>
-                  <mdb-icon class="pl-1 pr-1" icon="check"></mdb-icon>
-                  Payment
-                </ng-template>
-                <td>
-                </td>
-              </tr>
             </tbody>
           </table>
+          <ng-template #payment>
+            <div>
+              No Payments yet
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>
@@ -217,39 +209,3 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="row">
-    <div class="col-md-12">
-      <div class="card card-primary">
-        <div class="card-header primary-color white-text">
-          <div id="votes" class="card-heading">
-            Masternodes votes
-          </div>
-          <div class="card-body">
-            <table class="proposal-details-table table table-bordered table-sm table-hover">
-              <tr>
-                <th>Date</th>
-                <th>Masternode Hash-Index</th>
-                <th>Vote</th>
-                <th>Vote Hash</th>
-              </tr>
-              <tbody>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer">
-            <span class="pull-left">Last data refresh:</span>
-            <span class="pull-right">
-              <span id="votestableLR">Never</span>
-              <br>
-              <span id="votestableLRHR"></span>
-            </span>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
