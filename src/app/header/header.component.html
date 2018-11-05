@@ -1,5 +1,5 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg unique-color-dark fixed-top scrolling-navbar">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color-dark" [containerInside]="false">
 
   <!-- Navbar brand -->
   <logo>
@@ -8,17 +8,10 @@
 
   <!-- Collapsible content -->
   <links>
-
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <!-- <li class="nav-item active">
-        <a class="nav-link hvr-ripple-out" mdbWavesEffect>Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li> -->
       <li class="nav-item">
         <a class="nav-link hvr-ripple-out" mdbWavesEffect [routerLink]="['/governance']">Governance</a>
-
       </li>
       <li class="nav-item">
         <a class="nav-link hvr-ripple-out" target="_blank" mdbWavesEffect href="https://www.zestcoin.io/">Website</a>
@@ -38,24 +31,6 @@
       <li class="nav-item">
         <a class="nav-link hvr-ripple-out" target="_blank" mdbWavesEffect href="https://explorer.zestcoin.io/ ">Explorer</a>
       </li>
-
-      <!-- Dropdown -->
-      <!-- <li class="nav-item dropdown " dropdown>
-        <a dropdownToggle mdbWavesEffect type="button " class="nav-link dropdown-toggle waves-light " mdbWavesEffect>
-          Connect with us
-          <span class="caret "></span>
-        </a>
-        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary " role="menu ">
-          <a class="dropdown-item waves-light " target="_blank " mdbWavesEffect href="https://www.zestcoin.io/ ">Website</a>
-          <a class="dropdown-item waves-light " target="_blank " mdbWavesEffect href="https://github.com/ZestFoundation ">Github</a>
-          <a class="dropdown-item waves-light " target="_blank " mdbWavesEffect href="https://www.reddit.com/r/ZestCoin/ ">Reddit Community</a>
-          <a class="dropdown-item waves-light " target="_blank " mdbWavesEffect href="https://discord.gg/ruATrCg ">Discord</a>
-          <a class="dropdown-item waves-light " target="_blank " mdbWavesEffect href="https://bitcointalk.org/index.php?topic=4151782 ">Bitcoin Talk</a>
-          <a class="dropdown-item waves-light " target="_blank " mdbWavesEffect href="https://explorer.zestcoin.io/ ">Explorer</a>
-          <div class="divider dropdown-divider "></div>
-          <a class="dropdown-item waves-light " mdbWavesEffect href="# ">Separated link</a>
-        </div>
-      </li> -->
 
     </ul>
     <!-- Links -->
